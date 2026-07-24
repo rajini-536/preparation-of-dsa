@@ -1,0 +1,31 @@
+public class Main{
+    public static void main(String[] args) {
+        int[][] arr = {
+            {10, 20, 30},
+            {5, 40, 15},
+            {25, 35, 50}
+        };
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                int num = arr[i][j];
+
+                if (num > largest) {
+                    secondLargest = largest;
+                    largest = num;
+                } else if (num > secondLargest && num != largest) {
+                    secondLargest = num;
+                }
+            }
+        }
+
+        if (secondLargest == Integer.MIN_VALUE) {
+            System.out.println("No second largest element exists");
+        } else {
+            System.out.println("Second largest element: " + secondLargest);
+        }
+    }
+}
