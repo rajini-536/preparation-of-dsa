@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String args[]){
+        int arr[]={10, 9, 9,7};
+        int smallest = Integer.MAX_VALUE;
+
+        int secondsmallest = Integer.MAX_VALUE;
+        
+        for(int temp : arr){
+            if(temp < smallest){
+                secondsmallest = smallest;
+                smallest = temp ;
+            }
+            else if (temp > secondsmallest){
+                secondsmallest = temp ;
+            }
+        }
+        System.out.println("smallest element"+ smallest);
+        System.out.println("Second smallestt element"+ secondsmallest);
+
+        
+        
+    }
+}
